@@ -17,6 +17,13 @@ ARG ENCRYPTION_KEY
 
 ENV N8N_ENCRYPTION_KEY=$ENCRYPTION_KEY
 
-RUN pip install apitable pandas
+RUN env
+RUN whoami
+
+USER root
+
+RUN apk update
+RUN apk add --update python3 py3-pip --no-cache
+RUN pip install apitable
 
 CMD ["n8n start"]
