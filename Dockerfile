@@ -19,7 +19,7 @@ ENV N8N_ENCRYPTION_KEY=$ENCRYPTION_KEY
 
 USER root
 
-RUN apk update && apk add --update python3 py3-pip --no-cache
+RUN apk update && apk add --update --no-cache py-pip automake gcc g++ subversion python3-dev
 RUN pip install apitable openai --no-cache-dir
 
 USER node
